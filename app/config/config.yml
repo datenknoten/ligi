@@ -35,12 +35,14 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form_themes:
+      - "form_div_layout.html.twig"
 
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "LigiBundle" ]
+    bundles:        [ "LigiBundle", "FOSUserBundle" ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
