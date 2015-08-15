@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>{% block title %}{% trans %}Welcome{% endtrans %}{% endblock %} — Ligi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link rel="shortcut icon" href="/favicon.png" / -->
+    {% stylesheets
+      "@LigiBundle/Resources/public/semantic-ui/dist/semantic.css"
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}    
+    {% block css %}
+
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <main class="ui basic segment">
+      {% block body %}{% endblock %}
+    </main>
+    {% javascripts
+    "@LigiBundle/Resources/public/jquery/dist/jquery.js"
+    "@LigiBundle/Resources/public/semantic-ui/dist/semantic.js"
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% block javascripts %}{% endblock %}
+  </body>
+</html>

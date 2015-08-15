@@ -1,0 +1,21 @@
+{
+  "name": "ligi",
+  "version": "0.1.0",
+  "homepage": "https://github.com/enko/ligi",
+  "directory": "src/Datenknoten/LigiBundle/Resources/public",
+  "authors": [
+    "Tim Schumacher <tim@datenknoten.me>"
+  ],
+  "description": "A tool to connect people who want to give stuff away.",
+  "license": "AGPL v3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic-ui": "~2.0"
+  }
+}

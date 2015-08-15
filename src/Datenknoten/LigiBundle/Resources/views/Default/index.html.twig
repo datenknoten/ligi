@@ -1,3 +1,7 @@
-<h1>{% trans %}Welcome to Ligi{% endtrans %}</h1>
+{% extends 'LigiBundle::layout.html.twig' %}
+
+{% block body -%}
+<h1 class="ui dividing header">{% trans %}Welcome to Ligi{% endtrans %}</h1>
 
 <p>{% trans %}Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.{% endtrans %}</p>
+{% endblock %}
