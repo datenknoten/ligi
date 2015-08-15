@@ -1,0 +1,4 @@
+ligi:
+    resource: "@LigiBundle/Controller/"
+    type:     annotation
+    prefix:   /
