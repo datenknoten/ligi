@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="a1ca9dfbdc35a3a836d564e2412e0f87" resname="Welcome to Ligi">
+        <source>Welcome to Ligi</source>
+        <target>Willkommen bei Ligi</target>
+      </trans-unit>
+      <trans-unit id="d21a541ef3798779095a76d06253dd86" resname="Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.">
+        <source>Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.</source>
+        <target>Ligi ist das Esperanto-Wort für Link oder Verbindung. Ligi versucht Menschen zusammen zu bringen die etwas verschenken wollen mit Menschen die etwas brauchen.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
