@@ -55,7 +55,7 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   "%database_driver%"
+        driver:   "pdo_pgsql"
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"
@@ -86,3 +86,10 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Datenknoten\LigiBundle\Entity\User
+
+
+stof_doctrine_extensions:
+  orm:
+    default:
+      timestampable: true
+      blameable: true

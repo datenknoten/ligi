@@ -1,0 +1,9 @@
+{% extends 'LigiBundle::layout.html.twig' %}
+
+{% block title %}{{ entity.name }}{% endblock title %}
+
+{% block body -%}
+  <h1 class="ui dividing header">{{ entity.name }}</h1>
+
+  <p>{{ entity.description }}</p>
+{% endblock %}

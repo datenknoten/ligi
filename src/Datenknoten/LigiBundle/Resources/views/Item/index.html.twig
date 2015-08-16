@@ -1,0 +1,22 @@
+{% extends 'LigiBundle::layout.html.twig' %}
+
+{% block title %}{% trans %}Item list{% endtrans %}{% endblock title %}
+
+{% block body -%}
+  <h1 class="ui dividing header">{% trans %}Item list{% endtrans %}</h1>
+
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>{% trans %}Name{% endtrans %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entity in entities %}
+        <tr>
+          <td><a href="{{ path('item_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
