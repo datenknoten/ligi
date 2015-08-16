@@ -17,6 +17,21 @@
   </head>
 
   <body>
+    <nav class="ui menu">
+      <a class="item" href="{{ path('ligi_start') }}">
+        {% trans %}Home{% endtrans %}
+      </a>
+      <div class="right menu">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+          <a class="ui item" href="{{ path('fos_user_profile_show') }}">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a>
+          <a class="ui item" href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+          </a>
+        {% else %}
+          <a class="ui item" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+      </div>
+    </nav>
     <main class="ui basic segment">
       {% block body %}{% endblock %}
     </main>
