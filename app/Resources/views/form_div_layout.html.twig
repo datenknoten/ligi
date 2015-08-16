@@ -237,11 +237,19 @@
 {%- endblock repeated_row -%}
 
 {%- block form_row -%}
-    <div class="field">
+  <div class="field">
+    {% if block_prefixes[1] == 'checkbox' %}
+      <div class="ui toggle checkbox">
+        {{- form_widget(form) -}}
         {{- form_label(form) -}}
         {{- form_errors(form) -}}
-        {{- form_widget(form) -}}
-    </div>
+      </div>
+    {% else %}
+      {{- form_label(form) -}}
+      {{- form_errors(form) -}}
+      {{- form_widget(form) -}}
+    {% endif %}
+  </div>
 {%- endblock form_row -%}
 
 {%- block button_row -%}
