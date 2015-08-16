@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Datenknoten\LigiBundle\Entity\Item;
 use Datenknoten\LigiBundle\Form\ItemType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Item controller.
@@ -87,10 +88,13 @@ class ItemController extends Controller
      * @Route("/new", name="ligi_item_new")
      * @Method("GET")
      * @Template()
+     * @Security("has_role('ROLE_USER')")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
         $entity = new Item();
+        $is_request = $request->query->get('is_request','false') == 'false' ? false : true;
+        $entity->setIsRequest($is_request);
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -130,6 +134,7 @@ class ItemController extends Controller
      * @Route("/{id}/edit", name="ligi_item_edit")
      * @Method("GET")
      * @Template()
+     * @Security("has_role('ROLE_USER')")
      */
     public function editAction($id)
     {
@@ -139,6 +144,17 @@ class ItemController extends Controller
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Item entity.');
+        }
+
+        $user = $this->getUser();
+
+        if ($user->getUsername() != $entity->getCreatedBy()) {
+            $this->addFlash(
+                'warning',
+                'You can only edit your own items.'
+            );
+
+            return $this->redirect($this->generateUrl('ligi_item_show', ['id' => $entity->getId()]));
         }
 
         $editForm = $this->createEditForm($entity);
@@ -175,6 +191,7 @@ class ItemController extends Controller
      * @Route("/{id}", name="ligi_item_update")
      * @Method("PUT")
      * @Template("LigiBundle:Item:edit.html.twig")
+     * @Security("has_role('ROLE_USER')")
      */
     public function updateAction(Request $request, $id)
     {
@@ -193,7 +210,7 @@ class ItemController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ligi_item_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ligi_item_show', array('id' => $id)));
         }
 
         return array(
@@ -207,6 +224,7 @@ class ItemController extends Controller
      *
      * @Route("/{id}", name="ligi_item_delete")
      * @Method("DELETE")
+     * @Security("has_role('ROLE_USER')")
      */
     public function deleteAction(Request $request, $id)
     {
