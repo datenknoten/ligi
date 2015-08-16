@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2015-08-16T13:38:54Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
     <body>
-      <trans-unit id="a1ca9dfbdc35a3a836d564e2412e0f87" resname="Welcome to Ligi">
-        <source>Welcome to Ligi</source>
-        <target>Willkommen bei Ligi</target>
+      <trans-unit id="6e157c5da4410b7e9de85f5c93026b9176e69064" resname="Create">
+        <source>Create</source>
+        <target state="new">Create</target>
+        <jms:reference-file line="79">LigiBundle/Controller/ItemController.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="d21a541ef3798779095a76d06253dd86" resname="Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.">
+      <trans-unit id="cbfba02feedbc94b0ae042ffa2e5300176843c59" resname="Create item">
+        <source>Create item</source>
+        <target>__Create item</target>
+        <jms:reference-file line="4">views/Item/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f6fdbe48dc54dd86f63097a03bd24094dedd713a" resname="Delete">
+        <source>Delete</source>
+        <target state="new">Delete</target>
+        <jms:reference-file line="243">LigiBundle/Controller/ItemController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <source>Description</source>
+        <target state="new">Description</target>
+        <jms:reference-file line="19">LigiBundle/Form/ItemType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50ecc1598cc6abae6d68e85166161e93093b7d4b" resname="Item list">
+        <source>Item list</source>
+        <target>__Item list</target>
+        <jms:reference-file line="4">views/Item/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="81cbd4094ffb4ec31a0aefbe364f645373b83633" resname="Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.">
         <source>Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.</source>
         <target>Ligi ist das Esperanto-Wort für Link oder Verbindung. Ligi versucht Menschen zusammen zu bringen die etwas verschenken wollen mit Menschen die etwas brauchen.</target>
+        <jms:reference-file line="6">views/Default/index.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit id="83218ac34c1834c26781fe4bde918ee4" resname="Welcome">
+      <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
+        <source>Name</source>
+        <target>__Name</target>
+        <jms:reference-file line="9">views/Item/index.html.twig</jms:reference-file>
+        <jms:reference-file line="18">LigiBundle/Form/ItemType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb91e24fa52d8d2b32937bf04d843f730319a902" resname="Update">
+        <source>Update</source>
+        <target state="new">Update</target>
+        <jms:reference-file line="168">LigiBundle/Controller/ItemController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ca4f9dcf204e2037bfe5884867bead98bd9cbaf8" resname="Welcome">
         <source>Welcome</source>
         <target>Willkommen</target>
+        <jms:reference-file line="5">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fff2e27239e990abb4fc930a666c85275259da33" resname="Welcome to Ligi">
+        <source>Welcome to Ligi</source>
+        <target>Willkommen bei Ligi</target>
+        <jms:reference-file line="4">views/Default/index.html.twig</jms:reference-file>
       </trans-unit>
     </body>
   </file>
