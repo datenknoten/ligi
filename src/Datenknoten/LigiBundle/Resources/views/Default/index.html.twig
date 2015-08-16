@@ -3,5 +3,21 @@
 {% block body -%}
 <h1 class="ui dividing header">{% trans %}Welcome to Ligi{% endtrans %}</h1>
 
-<p>{% trans %}Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.{% endtrans %}</p>
+<div class="ui segment">{% trans %}Ligi is the esperanto word for link or connection. This application aims to conect people who want to give away stuff for free and without conditions.{% endtrans %}</div>
+
+<div class="ui celled grid center aligned">
+  <div class="eight wide column">
+    <a href="{{ path('ligi_search',{ "search_type":"give_away" }) }}">
+      <span>{% trans %}I want to give something.{% endtrans %}</span><br />
+      <span style="font-size: 90%;">{% trans %}You have a smartphone, some clothing you want to give away? Have a look if someone is in need and if not, post it.{% endtrans %}</span>
+    </a>
+  </div>
+  <div class="eight wide column">
+    <a class="item" href="{{ path('ligi_search',{ "search_type":"request" }) }}">
+      {% trans %}I'm looking for something{% endtrans %}<br />
+      <span style="font-size: 90%;">{% trans %}You are in dire need of some clothing, a phone or something else? Have a look if someone is offering it and if not, add a new request.{% endtrans %}</span>
+    </a>
+  </div>
+</div>
+
 {% endblock %}
