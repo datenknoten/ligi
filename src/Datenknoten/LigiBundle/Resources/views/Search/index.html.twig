@@ -1,0 +1,46 @@
+{% extends 'LigiBundle::layout.html.twig' %}
+
+{% block title %}{% trans %}Search{% endtrans %}{% endblock %}
+
+{% block body %}
+  <div class="ui two item menu">
+    <a class="{% if search_type == 'give_away' %}active {% endif %}item" href="{{ path('ligi_search',{ "search_type":"give_away", "search": search }) }}">{% trans %}I want to give something.{% endtrans %}</a>
+    <a class="{% if search_type == 'request' %}active {% endif %}item" href="{{ path('ligi_search',{ "search_type":"request", "search": search }) }}">{% trans %}I'm looking for something{% endtrans %}</a>
+  </div>
+  <form class="ui form" method="POST">
+    <div class="field">
+      <!--label for="search">{% trans %}Search{% endtrans %}</label -->
+      <input type="text" id="search" name="search" placeholder="{% trans %}Enter your search term and press return…{% endtrans %}" required value="{{ search }}"/>
+    </div>
+  </form>
+  {% if entities|length > 0 %}
+    <div class="ui cards">
+      {% for entity in entities %}
+        <div class="card">
+          <div class="image">
+            <a class="ui fluid image" href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
+              <img src="/images/avatar2/large/matthew.png" />
+            </a>
+          </div>
+          <div class="content">
+            <div class="header">
+              <a href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
+                {{ entity.name }}
+              </a>
+            </div>
+            <div class="description">
+              {{ entity.description }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <div class="ui segment">
+    {% if search_type == 'request' %}
+      {% trans with {'%url%':path('ligi_item_new',{'is_requested' : 'true' })} %}No luck finding what you want? <a href="%url%">Add it</a>.{% endtrans %}
+    {% else %}
+      {% trans with {'%url%':path('ligi_item_new',{'is_requested' : 'false' })} %}No luck finding what you want? <a href="%url%">Add it</a>.{% endtrans %}
+    {% endif %}
+  </div>
+{% endblock %}
