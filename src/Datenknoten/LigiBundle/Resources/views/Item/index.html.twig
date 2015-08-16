@@ -1,20 +1,31 @@
 {% extends 'LigiBundle::layout.html.twig' %}
 
+{% block title %}{% trans %}Item list{% endtrans %}{% endblock title %}
+
 {% block body -%}
   <h1 class="ui dividing header">{% trans %}Item list{% endtrans %}</h1>
 
-  <table class="ui table">
-    <thead>
-      <tr>
-        <th>{% trans %}Name{% endtrans %}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for entity in entities %}
-        <tr>
-          <td><a href="{{ path('item_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <div class="ui cards">
+    {% for entity in entities %}
+      <div class="card">
+        <div class="image">
+          <a class="ui fluid image" href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
+            <img src="/images/avatar2/large/matthew.png" />
+          </a>
+        </div>
+        <div class="content">
+          <div class="header">
+            <a href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
+              {{ entity.name }}
+            </a>
+          </div>
+          <div class="description">
+            {{ entity.description }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+
 {% endblock %}
