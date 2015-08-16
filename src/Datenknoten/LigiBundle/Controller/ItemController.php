@@ -21,7 +21,7 @@ class ItemController extends Controller
     /**
      * Lists all Item entities.
      *
-     * @Route("/", name="item")
+     * @Route("/", name="ligi_item_index")
      * @Method("GET")
      * @Template()
      */
@@ -38,7 +38,7 @@ class ItemController extends Controller
     /**
      * Creates a new Item entity.
      *
-     * @Route("/", name="item_create")
+     * @Route("/", name="ligi_item_create")
      * @Method("POST")
      * @Template("LigiBundle:Item:new.html.twig")
      */
@@ -53,7 +53,7 @@ class ItemController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('item_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('ligi_item_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -72,7 +72,7 @@ class ItemController extends Controller
     private function createCreateForm(Item $entity)
     {
         $form = $this->createForm(new ItemType(), $entity, array(
-            'action' => $this->generateUrl('item_create'),
+            'action' => $this->generateUrl('ligi_item_create'),
             'method' => 'POST',
         ));
 
@@ -84,7 +84,7 @@ class ItemController extends Controller
     /**
      * Displays a form to create a new Item entity.
      *
-     * @Route("/new", name="item_new")
+     * @Route("/new", name="ligi_item_new")
      * @Method("GET")
      * @Template()
      */
@@ -102,7 +102,7 @@ class ItemController extends Controller
     /**
      * Finds and displays a Item entity.
      *
-     * @Route("/{id}", name="item_show")
+     * @Route("/{id}", name="ligi_item_show")
      * @Method("GET")
      * @Template()
      */
@@ -127,7 +127,7 @@ class ItemController extends Controller
     /**
      * Displays a form to edit an existing Item entity.
      *
-     * @Route("/{id}/edit", name="item_edit")
+     * @Route("/{id}/edit", name="ligi_item_edit")
      * @Method("GET")
      * @Template()
      */
@@ -161,7 +161,7 @@ class ItemController extends Controller
     private function createEditForm(Item $entity)
     {
         $form = $this->createForm(new ItemType(), $entity, array(
-            'action' => $this->generateUrl('item_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('ligi_item_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -172,7 +172,7 @@ class ItemController extends Controller
     /**
      * Edits an existing Item entity.
      *
-     * @Route("/{id}", name="item_update")
+     * @Route("/{id}", name="ligi_item_update")
      * @Method("PUT")
      * @Template("LigiBundle:Item:edit.html.twig")
      */
@@ -193,7 +193,7 @@ class ItemController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('item_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ligi_item_edit', array('id' => $id)));
         }
 
         return array(
@@ -205,7 +205,7 @@ class ItemController extends Controller
     /**
      * Deletes a Item entity.
      *
-     * @Route("/{id}", name="item_delete")
+     * @Route("/{id}", name="ligi_item_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -225,7 +225,7 @@ class ItemController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('item'));
+        return $this->redirect($this->generateUrl('ligi_item_index'));
     }
 
     /**
@@ -238,7 +238,7 @@ class ItemController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('item_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ligi_item_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
