@@ -1,7 +1,22 @@
 {% extends 'LigiBundle::layout.html.twig' %}
 
+{% block title %}{{ entity.name }}{% endblock title %}
+
 {% block body -%}
   <h1 class="ui dividing header">{{ entity.name }}</h1>
 
-  <p>{{ entity.description }}</p>
+  <div class="ui rounded right floated medium image">
+    <img src="/images/avatar2/large/matthew.png" />
+  </div>
+
+  <p>
+    {{ entity.description }}
+  </p>
+
+  <div class="ui divider"></div>
+
+  <a class="ui blue button" href="{{ path('ligi_item_edit', { 'id': entity.id }) }}">
+    {% trans %}Edit{% endtrans %}
+  </a>
+
 {% endblock %}
