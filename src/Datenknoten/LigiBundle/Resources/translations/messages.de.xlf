@@ -23,7 +23,7 @@
       </trans-unit>
       <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
         <source>Description</source>
-        <target state="new">Beschreibung</target>
+        <target state="new">Description</target>
         <jms:reference-file line="19">LigiBundle/Form/ItemType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="50ecc1598cc6abae6d68e85166161e93093b7d4b" resname="Item list">
@@ -38,7 +38,7 @@
       </trans-unit>
       <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
         <source>Name</source>
-        <target>Name</target>
+        <target>__Name</target>
         <jms:reference-file line="9">views/Item/index.html.twig</jms:reference-file>
         <jms:reference-file line="18">LigiBundle/Form/ItemType.php</jms:reference-file>
       </trans-unit>
