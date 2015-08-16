@@ -5,6 +5,7 @@ namespace Datenknoten\LigiBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 
 class ItemType extends AbstractType
 {
@@ -17,6 +18,14 @@ class ItemType extends AbstractType
         $builder
             ->add('name','text',['label' => 'Name'])
             ->add('description','textarea',['label' => 'Description'])
+            ->add('is_request','choice',[
+                'label' => false,
+                'choice_list' => new ChoiceList(
+                    [true,false],
+                    ['I need this.', 'I want to give this away.']
+                ),
+                'required' => true,
+            ])
         ;
     }
     

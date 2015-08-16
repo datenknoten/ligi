@@ -39,6 +39,13 @@ class Item
      */
     private $description;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_request", type="boolean",options={"default"=false})
+     */
+    private $is_request;
+
 
     /**
      * Get id
@@ -94,5 +101,28 @@ class Item
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set is_request
+     *
+     * @param string $is_request
+     * @return Item
+     */
+    public function setIsRequest($is_request)
+    {
+        $this->is_request = $is_request;
+
+        return $this;
+    }
+
+    /**
+     * Get is_request
+     *
+     * @return string 
+     */
+    public function getIsRequest()
+    {
+        return $this->is_request;
     }
 }
