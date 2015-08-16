@@ -33,6 +33,14 @@
       </div>
     </nav>
     <main class="ui basic segment">
+      {% for type, messages in app.session.flashBag.all %}
+        {% for message in messages %}
+          <div class="ui {{ type }} message">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endfor %}
+
       {% block body %}{% endblock %}
     </main>
     {% javascripts
