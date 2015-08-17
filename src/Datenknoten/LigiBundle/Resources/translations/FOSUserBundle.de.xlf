@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2015-08-17T19:49:39Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="3ed6a1235bf3e6337f499ec08dd3a1d6768b0c57" resname="layout.logged_in_as">
+        <source>layout.logged_in_as</source>
+        <target state="new">layout.logged_in_as</target>
+        <jms:reference-file line="26">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="360d5f783c46f5e90f1b24010cb6bf03626ec35b" resname="layout.login">
+        <source>layout.login</source>
+        <target state="new">layout.login</target>
+        <jms:reference-file line="31">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="80a0b95340202d0b8c88ba8bd10b315ecdd1feba" resname="layout.logout">
+        <source>layout.logout</source>
+        <target state="new">layout.logout</target>
+        <jms:reference-file line="28">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
