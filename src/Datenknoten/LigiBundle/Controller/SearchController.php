@@ -40,7 +40,8 @@ class SearchController extends Controller
             ->where('i.name LIKE :name')
             ->andWhere('i.description LIKE :description')
             ->andWhere('i.is_request = :is_request')
-            ->orderBy('i.id')
+            ->orderBy('i.id','DESC')
+            ->setMaxResults(12)
             ->setParameter('name', $search_term)
             ->setParameter('description',$search_term)
             ->setParameter('is_request',($search_type == 'request' ? true : false));

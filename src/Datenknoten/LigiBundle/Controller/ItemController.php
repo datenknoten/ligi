@@ -8,8 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Datenknoten\LigiBundle\Entity\Item;
+use Datenknoten\LigiBundle\Entity\File;
 use Datenknoten\LigiBundle\Form\ItemType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Item controller.
@@ -48,10 +50,12 @@ class ItemController extends Controller
         $entity = new Item();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
         if ($form->isValid()) {
+            $files = $entity->files;
             $em = $this->getDoctrine()->getManager();
+            $entity->files = [];
             $em->persist($entity);
+            $this->saveFiles($em,$entity,$files);
             $em->flush();
 
             return $this->redirect($this->generateUrl('ligi_item_show', array('id' => $entity->getId())));
@@ -261,5 +265,16 @@ class ItemController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    private function savefiles($em,$entity,$files) {
+        $uploadableManager = $this->get('stof_doctrine_extensions.uploadable.manager');
+        foreach ($files as $fileInfo) {
+            $file = new File();
+            $uploadableManager->markEntityToUpload($file, $fileInfo);
+            $em->persist($file);
+            $entity->files[] = $file;
+            $em->persist($entity);
+        }
     }
 }

@@ -93,3 +93,20 @@ stof_doctrine_extensions:
     default:
       timestampable: true
       blameable: true
+      uploadable: true
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        thumbnail:
+            quality: 85
+            filters:
+                thumbnail: { size: [300, 300], mode: outbound }
+    loaders:
+        default:
+            filesystem:
+                data_root: %kernel.root_dir%/../media

@@ -6,14 +6,16 @@
   <h1 class="ui dividing header">{{ entity.name }}</h1>
 
   <div class="ui rounded right floated medium image">
-    <img src="/images/avatar2/large/matthew.png" />
+    {% if entity.files|length > 0 %}
+      <img src="{{ entity.files[0].path|basename|imagine_filter('thumbnail') }}" />
+    {% endif %}
   </div>
 
   <p>
     {{ entity.description }}
   </p>
 
-  <div class="ui divider"></div>
+  <div class="ui clearing divider"></div>
 
   <a class="ui blue button" href="{{ path('ligi_item_edit', { 'id': entity.id }) }}">
     {% trans %}Edit{% endtrans %}

@@ -14,22 +14,26 @@
     </div>
   </form>
   {% if entities|length > 0 %}
-    <div class="ui cards">
+    <div class="ui four column grid">
       {% for entity in entities %}
-        <div class="card">
-          <div class="image">
-            <a class="ui fluid image" href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
-              <img src="/images/avatar2/large/matthew.png" />
-            </a>
-          </div>
-          <div class="content">
-            <div class="header">
-              <a href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
-                {{ entity.name }}
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <a class="ui fluid image" href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
+                {% if entity.files|length > 0 %}
+                  <img src="{{ entity.files[0].path|basename|imagine_filter('thumbnail') }}" />
+                {% endif %}
               </a>
             </div>
-            <div class="description">
-              {{ entity.description }}
+            <div class="content">
+              <div class="header">
+                <a href="{{ path('ligi_item_show', { 'id': entity.id }) }}">
+                  {{ entity.name }}
+                </a>
+              </div>
+              <div class="description">
+                {{ entity.description }}
+              </div>
             </div>
           </div>
         </div>

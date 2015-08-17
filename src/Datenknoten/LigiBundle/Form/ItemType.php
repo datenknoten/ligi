@@ -26,6 +26,12 @@ class ItemType extends AbstractType
                 ),
                 'required' => true,
             ])
+            ->add('files','file',[
+                'multiple' => true,
+                'data_class' => null,
+                'required' => false,
+                'label' => 'Images',
+            ])
         ;
     }
     

@@ -46,6 +46,17 @@ class Item
      */
     private $is_request;
 
+    /**
+     * @var array
+     *
+     * @ORM\ManyToMany(targetEntity="File")
+     * @ORM\JoinTable(name="item2file",
+     *      joinColumns={@ORM\JoinColumn(name="items_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="files_id", referencedColumnName="id")}
+     *      )
+     */
+    public $files = [];
+
 
     /**
      * Get id

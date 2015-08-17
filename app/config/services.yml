@@ -8,3 +8,8 @@ services:
     class: Datenknoten\LigiBundle\EventListener\RequestListener
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: setLocale, priority: 18 }
+  ligi.twig_extension:
+    class: Datenknoten\LigiBundle\Twig\LigiTwigExtension
+    public: false
+    tags:
+      - { name: twig.extension }
