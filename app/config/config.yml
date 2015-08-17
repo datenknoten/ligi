@@ -112,7 +112,7 @@ liip_imagine:
                 data_root: %kernel.root_dir%/../media
 
 knp_paginator:
-    page_range: 5
+    page_range: 4
     default_options:
         page_name: page                # page query parameter name
         sort_field_name: sort          # sort field query parameter name

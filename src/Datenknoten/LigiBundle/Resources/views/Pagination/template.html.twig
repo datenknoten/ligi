@@ -2,13 +2,13 @@
 <div class="ui pagination menu">
     {% if first is defined and current != first %}
       <a class="item" href="{{ path(route, query|merge({(pageParameterName): first})) }}">
-        &lt;&lt;
+        «
       </a>
     {% endif %}
 
     {% if previous is defined %}
       <a class="item" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">
-        &lt;
+        ‹
       </a>
     {% endif %}
 
@@ -27,13 +27,13 @@
 
     {% if next is defined %}
       <a class="item" href="{{ path(route, query|merge({(pageParameterName): next})) }}">
-        &gt;
+        ›
       </a>
     {% endif %}
 
     {% if last is defined and current != last %}
       <a class="item" href="{{ path(route, query|merge({(pageParameterName): last})) }}">
-        &gt;&gt;
+        »
       </a>
     {% endif %}
 </div>
