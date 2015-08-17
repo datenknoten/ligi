@@ -13,6 +13,7 @@
       <input type="text" id="search" name="search" placeholder="{% trans %}Enter your search term and press return…{% endtrans %}" required value="{{ search }}"/>
     </div>
   </form>
+  <div class="ui hidden divider"></div>
   {% if entities|length > 0 %}
     <div class="ui four column grid">
       {% for entity in entities %}
