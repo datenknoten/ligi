@@ -33,6 +33,9 @@
       </div>
     </nav>
     <main class="ui basic segment">
+      <div class="ui error message">
+        {% trans %}At this stage please do not use this software for real. If you want to contribute check the <a href="https://ligi.datenknoten.me/">Github page</a>.{% endtrans %}
+      </div>
       {% for type, messages in app.session.flashBag.all %}
         {% for message in messages %}
           <div class="ui {{ type }} message">
