@@ -17,8 +17,10 @@
 
   <div class="ui clearing divider"></div>
 
-  <a class="ui blue button" href="{{ path('ligi_item_edit', { 'id': entity.id }) }}">
-    {% trans %}Edit{% endtrans %}
-  </a>
+  {% if (is_granted('ROLE_USER') and (not (app.user is null)) and (app.user.username == entity.createdBy))  %}
+    <a class="ui blue button" href="{{ path('ligi_item_edit', { 'id': entity.id }) }}">
+      {% trans %}Edit{% endtrans %}
+    </a>
+  {% endif %}
 
 {% endblock %}
