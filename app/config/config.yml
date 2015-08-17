@@ -110,3 +110,14 @@ liip_imagine:
         default:
             filesystem:
                 data_root: %kernel.root_dir%/../media
+
+knp_paginator:
+    page_range: 5
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true
+    template:
+        pagination: LigiBundle:Pagination:template.html.twig
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig

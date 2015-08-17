@@ -41,16 +41,22 @@ class SearchController extends Controller
             ->andWhere('i.description LIKE :description')
             ->andWhere('i.is_request = :is_request')
             ->orderBy('i.id','DESC')
-            ->setMaxResults(12)
             ->setParameter('name', $search_term)
             ->setParameter('description',$search_term)
             ->setParameter('is_request',($search_type == 'request' ? true : false));
-        $entities = $qb->getQuery()->execute();        
+        $query = $qb->getQuery();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1)/*page number*/,
+            2/*limit per page*/
+        );
         
         return [
             "search_type" => $search_type,
             "search" => $search,
-            "entities" => $entities,
+            "pagination" => $pagination,
         ];
     }
 

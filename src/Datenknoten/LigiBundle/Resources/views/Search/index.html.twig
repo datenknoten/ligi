@@ -14,9 +14,9 @@
     </div>
   </form>
   <div class="ui hidden divider"></div>
-  {% if entities|length > 0 %}
+  {% if pagination|length > 0 %}
     <div class="ui four column grid">
-      {% for entity in entities %}
+      {% for entity in pagination %}
         <div class="column">
           <div class="ui fluid card">
             <div class="image">
@@ -39,6 +39,12 @@
           </div>
         </div>
       {% endfor %}
+    </div>
+
+    <div class="ui one column center aligned grid">
+      <div class="column">
+        {{ knp_pagination_render(pagination) }}
+      </div>
     </div>
   {% endif %}
   <div class="ui segment">
