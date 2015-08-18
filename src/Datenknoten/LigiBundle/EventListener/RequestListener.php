@@ -5,6 +5,7 @@ namespace Datenknoten\LigiBundle\EventListener;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Symfony\Component\Intl\Intl;
 
 class RequestListener
 {
@@ -23,5 +24,6 @@ class RequestListener
             $request->getSession()->set('_locale', $browser_locale);
             $request->setLocale($browser_locale);
         }
+        \Locale::setDefault($request->getSession()->get('_locale',null));
     }
 }

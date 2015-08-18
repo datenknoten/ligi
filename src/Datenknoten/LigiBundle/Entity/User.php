@@ -22,6 +22,13 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="languages", type="json_array",options={"default"=""})
+     */
+    public $languages;
+
     public function __construct()
     {
         parent::__construct();

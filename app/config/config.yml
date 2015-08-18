@@ -86,6 +86,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Datenknoten\LigiBundle\Entity\User
+    profile:
+        form:
+            type: ligi_user_profile
 
 
 stof_doctrine_extensions:

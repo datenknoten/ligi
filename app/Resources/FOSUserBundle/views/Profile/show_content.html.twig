@@ -1,0 +1,29 @@
+<h1 class="ui dividing header">{% trans %}Profile{% endtrans %}</h1>
+
+<table class="ui definition table">
+  <tr>
+    <td>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}</td>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <td>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}</td>
+    <td>{{ user.email }}</td>
+  </tr>
+  <tr>
+    <td>{% trans %}Languages{% endtrans %}</td>
+    <td>
+      {% if user.languages|length > 0 %}
+        <div class="ui list">
+          {% for language in user.languages %}
+            <div class="item">{{ language|languagename }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </td>
+  </tr>
+</table>
+
+<div class="ui clearing divider"></div>
+
+<a class="ui blue button" href="{{ path('fos_user_profile_edit') }}">{% trans %}Edit{% endtrans %}</a>
+

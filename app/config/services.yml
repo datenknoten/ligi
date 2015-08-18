@@ -13,3 +13,7 @@ services:
     public: false
     tags:
       - { name: twig.extension }
+  ligi.form.registration:
+    class: Datenknoten\LigiBundle\Form\ProfileFormType
+    tags:
+      - { name: form.type, alias: ligi_user_profile }
