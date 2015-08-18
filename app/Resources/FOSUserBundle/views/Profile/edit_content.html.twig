@@ -4,8 +4,8 @@
 
 {{ form_row(form.username) }}
 {{ form_row(form.email) }}
-{{ form_row(form.languages, { 'attr': {'class':'ui fluid search dropdown'}}) }}
-{{ form_row(form.current_password) }}
+{{ form_row(form.languages, { 'help':'Specify the languages you can speak.','attr': {'class':'ui fluid search dropdown'}}) }}
+{{ form_row(form.current_password, {'help':'Enter your Password to confirm these changes.'}) }}
 
 <input class="ui blue button" type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
 
