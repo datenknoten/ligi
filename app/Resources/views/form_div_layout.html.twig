@@ -1,16 +1,19 @@
 {# Widgets #}
 
 {%- block form_widget -%}
-    {% if compound %}
-        {{- block('form_widget_compound') -}}
-    {% else %}
-        {{- block('form_widget_simple') -}}
-    {% endif %}
+  {% if compound %}
+    {{- block('form_widget_compound') -}}
+  {% else %}
+    {{- block('form_widget_simple') -}}
+  {% endif %}
 {%- endblock form_widget -%}
 
 {%- block form_widget_simple -%}
   {%- set type = type|default('text') -%}
   <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+  {% if help is defined %}
+    <div class="help">{{ help|trans|raw }}</div>
+  {% endif %}
 {%- endblock form_widget_simple -%}
 
 {%- block form_widget_compound -%}
@@ -35,11 +38,14 @@
 {%- endblock textarea_widget -%}
 
 {%- block choice_widget -%}
-    {% if expanded %}
-        {{- block('choice_widget_expanded') -}}
-    {% else %}
-        {{- block('choice_widget_collapsed') -}}
-    {% endif %}
+  {% if expanded %}
+    {{- block('choice_widget_expanded') -}}
+  {% else %}
+    {{- block('choice_widget_collapsed') -}}
+  {% endif %}
+  {% if help is defined %}
+    <div class="help">{{ help|trans|raw }}</div>
+  {% endif %}      
 {%- endblock choice_widget -%}
 
 {%- block choice_widget_expanded -%}
