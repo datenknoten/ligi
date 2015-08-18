@@ -4,8 +4,8 @@
 
 {% block body %}
   <div class="ui two item menu">
-    <a class="{% if search_type == 'give_away' %}active {% endif %}item" href="{{ path('ligi_search',{ "search_type":"give_away", "search": search }) }}">{% trans %}I want to give something.{% endtrans %}</a>
-    <a class="{% if search_type == 'request' %}active {% endif %}item" href="{{ path('ligi_search',{ "search_type":"request", "search": search }) }}">{% trans %}I'm looking for something{% endtrans %}</a>
+    <a class="{% if search_type == 'give_away' %}active {% endif %}item" href="{{ path('ligi_search',{ "search_type":"give_away", "search": search }) }}">{% trans %}I would like to give something.{% endtrans %}</a>
+    <a class="{% if search_type == 'request' %}active {% endif %}item" href="{{ path('ligi_search',{ "search_type":"request", "search": search }) }}">{% trans %}I'm looking for something.{% endtrans %}</a>
   </div>
   <form class="ui form" method="POST">
     <div class="field">

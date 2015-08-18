@@ -3,19 +3,19 @@
 {% block body -%}
 <h1 class="ui dividing header">{% trans %}Welcome to Ligi{% endtrans %}</h1>
 
-<div class="ui segment">{% trans %}Ligi is the esperanto word for connection and so this application aims to connect people who want to give away stuff for free and without conditions to people in need.{% endtrans %}</div>
+<div class="ui segment">{% trans %}Ligi means "connection" in esperanto. Thus, in reference to that, this application aims to connect people who want to give away stuff to people in need — for free and without any conditions.{% endtrans %}</div>
 
 <div class="ui celled center aligned stackable grid">
   <div class="eight wide column">
     <a href="{{ path('ligi_search',{ "search_type":"give_away" }) }}">
-      <span>{% trans %}I want to give something.{% endtrans %}</span><br />
-      <span style="font-size: 90%;">{% trans %}You have a smartphone, some clothing you want to give away? Have a look if someone is in need and if not, post it.{% endtrans %}</span>
+      <span>{% trans %}I would like to give something.{% endtrans %}</span><br />
+      <span style="font-size: 90%;">{% trans %}Do you have a smartphone, some clothes or something else to give way? Please, have a look whether someone has already asked for it. If not, post your offer here.{% endtrans %}</span>
     </a>
   </div>
   <div class="eight wide column">
     <a class="item" href="{{ path('ligi_search',{ "search_type":"request" }) }}">
-      {% trans %}I'm looking for something{% endtrans %}<br />
-      <span style="font-size: 90%;">{% trans %}You are in dire need of some clothing, a phone or something else? Have a look if someone is offering it and if not, add a new request.{% endtrans %}</span>
+      {% trans %}I'm looking for something.{% endtrans %}<br />
+      <span style="font-size: 90%;">{% trans %}Do you need clothes, a mobile or something else? Have a look it someone is already offering it. If not, post your needs here.{% endtrans %}</span>
     </a>
   </div>
 </div>
