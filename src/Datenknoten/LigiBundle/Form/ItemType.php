@@ -6,6 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
+use Datenknoten\LigiBundle\Form\DataTransformer\ImageUploadTransformer;
+use Doctrine\ORM\EntityManager;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormEvent;
 
 class ItemType extends AbstractType
 {
@@ -26,15 +30,13 @@ class ItemType extends AbstractType
                 ),
                 'required' => true,
             ])
-            ->add('files','file',[
-                'multiple' => true,
-                'data_class' => null,
+            ->add('files','ligi_image',[
+                'label' => false,
                 'required' => false,
-                'label' => 'Images',
             ])
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

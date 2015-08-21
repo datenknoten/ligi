@@ -52,9 +52,12 @@
     "@LigiBundle/Resources/public/jquery/dist/jquery.js"
     "@LigiBundle/Resources/public/semantic-ui/dist/semantic.js"
     "@LigiBundle/Resources/public/js/main.js"
+    "@LigiBundle/Resources/public/js/image_widget.js"
     %}
-    <script src="{{ asset_url }}"></script>
+    <script src="{{ asset_url }}" type="text/javascript"></script>
     {% endjavascripts %}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}" type="text/javascript"></script>
 
     {% block javascripts %}{% endblock %}
   </body>

@@ -389,3 +389,56 @@
         {%- endif -%}
     {%- endfor -%}
 {%- endblock attributes -%}
+
+{% block ligi_image_widget %}
+  <div class="ui segment image-widget">
+    <template>
+      <div class="item id-new" data-filename="">
+        <img class="ui rounded tiny middle aligned image" src="" />
+        <button class="ui blue labeled icon remove-image button" style="display: none;">
+          <i class="remove icon"></i>
+          {% trans %}Remove{% endtrans %}
+        </button>
+        <div data-percent="0" class="ui progress">
+          <div style="transition-duration: 300ms; width: 0%;" class="bar">
+            <div class="progress">0%</div>
+          </div>
+        </div>
+        <div class="ui divider"></div>
+      </div>
+    </template>
+    <div class="images">
+    {% if data|length > 0 %}
+        {% for file in data %}
+          <div class="item id-{{ file.id }}">
+            <img
+               class="ui rounded tiny middle aligned image"
+               src="{{ file.path|basename|imagine_filter('thumbnail') }}" />
+            <button class="ui blue labeled icon button remove-image">
+              <i class="remove icon"></i>
+              {% trans %}Remove{% endtrans %}
+            </button>
+            {% if not loop.last %}
+              <div class="ui divider"></div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <div class="ui divider"></div>
+      {% endif %}
+      </div>
+    <input
+       type="file"
+       class="file-input-widget"
+       accept="image/jpeg,image/png,image/gif"
+       multiple />
+    <input
+       type="hidden"
+       name="{{ full_name }}"
+       class="image-data"
+       value="" />
+    <button
+       class="ui blue button add-image">
+       {% trans %}Add Image{% endtrans %}
+    </button>
+  </div>
+{% endblock ligi_image_widget %}

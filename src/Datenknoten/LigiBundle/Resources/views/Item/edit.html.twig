@@ -1,8 +1,7 @@
 {% extends 'LigiBundle::layout.html.twig' %}
 
 {% block body -%}
-    <h1>{{ entity.name }}</h1>
+    <h1 class="ui dividing header">{{ entity.name }}</h1>
 
     {{ form(edit_form) }}
-</ul>
 {% endblock %}

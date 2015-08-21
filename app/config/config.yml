@@ -39,11 +39,43 @@ twig:
       - "form_div_layout.html.twig"
 
 # Assetic Configuration
+# http://127.0.0.1:8000/css/themes/default/assets/fonts/icons.woff2
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:        [ "LigiBundle", "FOSUserBundle" ]
     #java: /usr/bin/java
+    assets:
+      semantic-icons-woff2:
+        inputs:
+          - '@LigiBundle/Resources/public/semantic-ui/dist/themes/default/assets/fonts/icons.woff2'
+        output:
+          '/css/themes/default/assets/fonts/icons.woff2'
+      semantic-icons-woff:
+        inputs:
+          - '@LigiBundle/Resources/public/semantic-ui/dist/themes/default/assets/fonts/icons.woff'
+        output:
+          '/css/themes/default/assets/fonts/icons.woff'
+      semantic-icons-ttf:
+        inputs:
+          - '@LigiBundle/Resources/public/semantic-ui/dist/themes/default/assets/fonts/icons.ttf'
+        output:
+          '/css/themes/default/assets/fonts/icons.ttf'
+      semantic-icons-svg:
+        inputs:
+          - '@LigiBundle/Resources/public/semantic-ui/dist/themes/default/assets/fonts/icons.svg'
+        output:
+          '/css/themes/default/assets/fonts/icons.svg'
+      semantic-icons-eot:
+        inputs:
+          - '@LigiBundle/Resources/public/semantic-ui/dist/themes/default/assets/fonts/icons.eot'
+        output:
+          '/css/themes/default/assets/fonts/icons.eot'
+      semantic-icons-otf:
+        inputs:
+          - '@LigiBundle/Resources/public/semantic-ui/dist/themes/default/assets/fonts/icons.otf'
+        output:
+          '/css/themes/default/assets/fonts/icons.otf'
     filters:
         cssrewrite: ~
         compass: ~

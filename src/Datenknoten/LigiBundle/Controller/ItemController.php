@@ -51,11 +51,8 @@ class ItemController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
         if ($form->isValid()) {
-            $files = $entity->files;
             $em = $this->getDoctrine()->getManager();
-            $entity->files = [];
             $em->persist($entity);
-            $this->saveFiles($em,$entity,$files);
             $em->flush();
 
             return $this->redirect($this->generateUrl('ligi_item_show', array('id' => $entity->getId())));
