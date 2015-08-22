@@ -117,7 +117,7 @@ class Item
     /**
      * Set is_request
      *
-     * @param string $is_request
+     * @param boolean $is_request
      * @return Item
      */
     public function setIsRequest($is_request)
