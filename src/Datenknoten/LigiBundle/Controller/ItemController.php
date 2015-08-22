@@ -263,15 +263,4 @@ class ItemController extends Controller
             ->getForm()
         ;
     }
-
-    private function savefiles($em,$entity,$files) {
-        $uploadableManager = $this->get('stof_doctrine_extensions.uploadable.manager');
-        foreach ($files as $fileInfo) {
-            $file = new File();
-            $uploadableManager->markEntityToUpload($file, $fileInfo);
-            $em->persist($file);
-            $entity->files[] = $file;
-            $em->persist($entity);
-        }
-    }
 }
