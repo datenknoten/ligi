@@ -26,7 +26,7 @@ services:
     class: Datenknoten\MessageCustomisationBundle\Form\Type\MessageItemType
     arguments:
       - "@doctrine"
-      - "@request"
+      - "@request_stack"
     scope: request
     tags:
       - { name: form.type, alias: mc_message_item }
@@ -34,7 +34,7 @@ services:
     class: Datenknoten\MessageCustomisationBundle\Form\Type\MessageRecipientType
     arguments:
       - "@doctrine"
-      - "@request"
+      - "@request_stack"
     scope: request
     tags:
       - { name: form.type, alias: mc_message_recipient }

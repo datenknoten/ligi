@@ -11,16 +11,17 @@ use Datenknoten\LigiBundle\Form\DataTransformer\ImageUploadTransformer;
 use Doctrine\ORM\EntityManager;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
-class MessageRecipientType extends AbstractType
+class MessageRecipientType extends AbstractTypep
 {
     private $managerRegistry;
     private $request;
 
-    public function __construct(ManagerRegistry $managerRegistry, Request $request)
+    public function __construct(ManagerRegistry $managerRegistry, RequestStack $request_stack)
     {
         $this->managerRegistry = $managerRegistry;
-        $this->request = $request;
+        $this->request = $request->getCurrentRequest();
     }
 
     /**

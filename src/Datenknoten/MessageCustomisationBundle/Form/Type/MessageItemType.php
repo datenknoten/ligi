@@ -17,19 +17,10 @@ class MessageItemType extends AbstractType
     private $managerRegistry;
     private $request;
 
-    public function __construct(ManagerRegistry $managerRegistry, Request $request)
+    public function __construct(ManagerRegistry $managerRegistry, RequestStack $request_stack)
     {
         $this->managerRegistry = $managerRegistry;
-        $this->request = $request;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        //$transformer = new ImageUploadTransformer($this->managerRegistry);
-        //$builder->addModelTransformer($transformer);
+        $this->request = $request_stack->getCurrentRequest();
     }
 
     public function configureOptions(OptionsResolver $resolver)
