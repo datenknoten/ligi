@@ -20,15 +20,15 @@ class SearchController extends Controller
      * @Route("/{search_type}/{search}",name="ligi_search", defaults={"search"=""})
      * @Template()
      */
-    public function indexAction($search_type,$search, Request $request)
+    public function indexAction($search_type, $search, Request $request)
     {
-        $_search = $request->request->get('search',null);
+        $_search = $request->request->get('search', null);
         if (!is_null($_search)) {
-            return $this->redirect($this->generateUrl('ligi_search', ['search_type' => $search_type,'search' => $_search]));
+            return $this->redirect($this->generateUrl('ligi_search', ['search_type' => $search_type, 'search' => $_search]));
         }
 
         $search_term = ($search == '' ? '%' : $search);
-        if (strpos($search_term,'%') === false) {
+        if (strpos($search_term, '%') === false) {
             $search_term = '%'.$search_term.'%';
         }
         
@@ -39,10 +39,10 @@ class SearchController extends Controller
             ->where('i.name LIKE :name')
             ->andWhere('i.description LIKE :description')
             ->andWhere('i.is_request = :is_request')
-            ->orderBy('i.id','DESC')
+            ->orderBy('i.id', 'DESC')
             ->setParameter('name', $search_term)
-            ->setParameter('description',$search_term)
-            ->setParameter('is_request',($search_type == 'request' ? true : false));
+            ->setParameter('description', $search_term)
+            ->setParameter('is_request', ($search_type == 'request' ? true : false));
         $query = $qb->getQuery();
 
         $paginator  = $this->get('knp_paginator');

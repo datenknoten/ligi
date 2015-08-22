@@ -94,7 +94,7 @@ class ItemController extends Controller
     public function newAction(Request $request)
     {
         $entity = new Item();
-        $is_request = $request->query->get('is_request','false') == 'false' ? false : true;
+        $is_request = $request->query->get('is_request', 'false') == 'false' ? false : true;
         $entity->setIsRequest($is_request);
         $form   = $this->createCreateForm($entity);
 
@@ -169,12 +169,12 @@ class ItemController extends Controller
     }
 
     /**
-    * Creates a form to edit a Item entity.
-    *
-    * @param Item $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Item entity.
+     *
+     * @param Item $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Item $entity)
     {
         $form = $this->createForm(new ItemType(), $entity, array(

@@ -46,13 +46,13 @@ class FileController extends Controller
     }
 
     private function convertDataToUploadedFile($data) {
-        $file_content = str_replace('data:image/jpeg;base64,','',$data->data);
-        $file_content = str_replace('data:image/gif;base64,','',$file_content);
-        $file_content = str_replace('data:image/png;base64,','',$file_content);
+        $file_content = str_replace('data:image/jpeg;base64,', '', $data->data);
+        $file_content = str_replace('data:image/gif;base64,', '', $file_content);
+        $file_content = str_replace('data:image/png;base64,', '', $file_content);
         $file_content = base64_decode($file_content);
-        $file_name = tempnam('/tmp','ligi');
-        file_put_contents($file_name,$file_content);
-        $retval = new UploadedFile($file_name,$data->name,null,strlen($file_content));
+        $file_name = tempnam('/tmp', 'ligi');
+        file_put_contents($file_name, $file_content);
+        $retval = new UploadedFile($file_name, $data->name, null, strlen($file_content));
         return $retval;
     }
 }

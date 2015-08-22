@@ -6,10 +6,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
-use Datenknoten\LigiBundle\Form\DataTransformer\ImageUploadTransformer;
-use Doctrine\ORM\EntityManager;
-use Symfony\Component\Form\FormEvents;
-use Symfony\Component\Form\FormEvent;
 
 class ItemType extends AbstractType
 {
@@ -20,17 +16,17 @@ class ItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name','text',['label' => 'Name'])
-            ->add('description','textarea',['label' => 'Description'])
-            ->add('is_request','choice',[
+            ->add('name', 'text', ['label' => 'Name'])
+            ->add('description', 'textarea', ['label' => 'Description'])
+            ->add('is_request', 'choice', [
                 'label' => false,
                 'choice_list' => new ChoiceList(
-                    [true,false],
+                    [true, false],
                     ['I need this.', 'I want to give this away.']
                 ),
                 'required' => true,
             ])
-            ->add('files','ligi_image',[
+            ->add('files', 'ligi_image', [
                 'label' => false,
                 'required' => false,
             ])

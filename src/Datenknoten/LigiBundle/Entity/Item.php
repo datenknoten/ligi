@@ -14,7 +14,7 @@ use Gedmo\Blameable\Traits\BlameableEntity;
  */
 class Item
 {
-    use TimestampableEntity,BlameableEntity;
+    use TimestampableEntity, BlameableEntity;
 
     /**
      * @var integer
