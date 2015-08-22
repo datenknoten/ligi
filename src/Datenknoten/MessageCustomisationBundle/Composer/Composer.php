@@ -3,7 +3,6 @@
 namespace Datenknoten\MessageCustomisationBundle\Composer;
 
 use FOS\MessageBundle\ModelManager\MessageManagerInterface;
-use FOS\MessageBundle\Sender\SenderInterface;
 use FOS\MessageBundle\Model\ThreadInterface;
 use FOS\MessageBundle\ModelManager\ThreadManagerInterface;
 use FOS\MessageBundle\MessageBuilder\ReplyMessageBuilder;
@@ -51,7 +50,7 @@ class Composer implements ComposerInterface
         $thread = $this->threadManager->createThread();
         $message = $this->messageManager->createMessage();
 
-        return new NewThreadMessageBuilder($message, $thread,$this->managerRegistry);
+        return new NewThreadMessageBuilder($message, $thread, $this->managerRegistry);
     }
 
     /**

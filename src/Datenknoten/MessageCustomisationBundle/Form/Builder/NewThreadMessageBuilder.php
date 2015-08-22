@@ -4,7 +4,6 @@ namespace Datenknoten\MessageCustomisationBundle\Form\Builder;
 
 use FOS\MessageBundle\Model\MessageInterface;
 use FOS\MessageBundle\Model\ParticipantInterface;
-use FOS\MessageBundle\Sender\SenderInterface;
 use Doctrine\Common\Collections\Collection;
 use FOS\MessageBundle\MessageBuilder\AbstractMessageBuilder;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -22,7 +21,7 @@ class NewThreadMessageBuilder extends AbstractMessageBuilder
 
     public function __construct(MessageInterface $message, ThreadInterface $thread, ManagerRegistry $managerRegistry)
     {
-        parent::__construct($message,$thread);
+        parent::__construct($message, $thread);
         $this->managerRegistry = $managerRegistry;
     }
 
@@ -43,12 +42,12 @@ class NewThreadMessageBuilder extends AbstractMessageBuilder
     {
         if ($item instanceof Item) {
             $this->thread->setItem($item);
-        } else if(is_string($item)) {
+        } else if (is_string($item)) {
             $id = $item;
             $entityManager = $this->managerRegistry->getManagerForClass("LigiBundle:Item");
             $item = $entityManager
-                  ->getRepository('LigiBundle:Item')
-                  ->find($id);
+                    ->getRepository('LigiBundle:Item')
+                    ->find($id);
             $this->thread->setItem($item);
         }
         return $this;
@@ -62,12 +61,12 @@ class NewThreadMessageBuilder extends AbstractMessageBuilder
     {
         if ($recipient instanceof ParticipantInterface) {
             $this->thread->addParticipant($recipient);
-        } else if(is_string($recipient)) {
+        } else if (is_string($recipient)) {
             $id = $recipient;
             $entityManager = $this->managerRegistry->getManagerForClass("LigiBundle:User");
             $user = $entityManager
-                  ->getRepository('LigiBundle:User')
-                  ->find($id);
+                    ->getRepository('LigiBundle:User')
+                    ->find($id);
             $this->thread->addParticipant($user);
         }
 
