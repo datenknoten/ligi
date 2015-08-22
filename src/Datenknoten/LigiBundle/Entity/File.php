@@ -66,4 +66,9 @@ class File
     {
         return $this->mimeType;
     }
+
+    public function getSize()
+    {
+        return $this->size;
+    }
 }
