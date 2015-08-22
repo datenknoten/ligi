@@ -26,11 +26,11 @@ class MessageItemType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $entityManager = $this->managerRegistry->getManagerForClass("LigiBundle:Item");
-        $id = $this->request->query->get('items_id',null);
+        $id = $this->request->query->get('items_id', null);
         if (!is_null($id)) {
             $item = $entityManager
-                  ->getRepository('LigiBundle:Item')
-                  ->find();
+                    ->getRepository('LigiBundle:Item')
+                    ->find();
         } else {
             $item = null;
         }

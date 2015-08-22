@@ -15,7 +15,7 @@ class ImageType extends AbstractType
     private $managerRegistry;
     private $request;
 
-    public function __construct(ManagerRegistry $managerRegistry,Request $request)
+    public function __construct(ManagerRegistry $managerRegistry, Request $request)
     {
         $this->managerRegistry = $managerRegistry;
         $this->request = $request;

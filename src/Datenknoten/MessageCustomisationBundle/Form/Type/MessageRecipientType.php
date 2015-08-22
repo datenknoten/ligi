@@ -2,15 +2,10 @@
 
 namespace Datenknoten\MessageCustomisationBundle\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
-use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Datenknoten\LigiBundle\Form\DataTransformer\ImageUploadTransformer;
-use Doctrine\ORM\EntityManager;
 use Doctrine\Common\Persistence\ManagerRegistry;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class MessageRecipientType extends AbstractTypep
@@ -27,11 +22,11 @@ class MessageRecipientType extends AbstractTypep
     public function configureOptions(OptionsResolver $resolver)
     {
         $entityManager = $this->managerRegistry->getManagerForClass("LigiBundle:User");
-        $recipient = $this->request->query->get('recipient',null);
+        $recipient = $this->request->query->get('recipient', null);
         if (!is_null($recipient)) {
             $item = $entityManager
-                  ->getRepository('LigiBundle:User')
-                  ->findOneBy(["username" => $recipient]);
+                    ->getRepository('LigiBundle:User')
+                    ->findOneBy(["username" => $recipient]);
         } else {
             $item = null;
         }

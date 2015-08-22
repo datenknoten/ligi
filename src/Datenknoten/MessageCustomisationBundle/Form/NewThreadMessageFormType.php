@@ -12,7 +12,7 @@ class NewThreadMessageFormType extends AbstractType
         $builder
             ->add('recipient', 'mc_message_recipient')
             ->add('item', 'mc_message_item')
-            ->add('subject', 'text',[
+            ->add('subject', 'text', [
                 'disabled' => true,
             ])
             ->add('body', 'textarea')
