@@ -24,15 +24,6 @@ class MessageRecipientType extends AbstractTypep
         $this->request = $request->getCurrentRequest();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        //$transformer = new ImageUploadTransformer($this->managerRegistry);
-        //$builder->addModelTransformer($transformer);
-    }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $entityManager = $this->managerRegistry->getManagerForClass("LigiBundle:User");
