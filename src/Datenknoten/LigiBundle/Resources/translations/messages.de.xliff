@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2015-08-17T20:33:41Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2015-08-22T22:44:01Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
     </header>
     <body>
-      <trans-unit id="48f72cd19e7516e671d419f8577cf1152075c338" resname="At this stage please do not use this software for real. If you want to contribute check the &lt;a href=&quot;https://ligi.datenknoten.me/&quot;&gt;Github page&lt;/a&gt;.">
-        <source><![CDATA[At this stage please do not use this software for real. If you want to contribute check the <a href="https://ligi.datenknoten.me/">Github page</a>.]]></source>
-        <target state="new"><![CDATA[At this stage please do not use this software for real. If you want to contribute check the <a href="https://ligi.datenknoten.me/">Github page</a>.]]></target>
+      <trans-unit id="b21058f4ccabb2cfbe9744b58db84bed76139300" resname="At this stage please do not use this software for real. If you want to contribute check the &lt;a href=&quot;https://github.com/datenknoten/ligi&quot;&gt;Github page&lt;/a&gt;.">
+        <source><![CDATA[At this stage please do not use this software for real. If you want to contribute check the <a href="https://github.com/datenknoten/ligi">Github page</a>.]]></source>
+        <target state="new"><![CDATA[At this stage please do not use this software for real. If you want to contribute check the <a href="https://github.com/datenknoten/ligi">Github page</a>.]]></target>
         <jms:reference-file line="37">Resources/views/layout.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="6e157c5da4410b7e9de85f5c93026b9176e69064" resname="Create">
         <source>Create</source>
         <target state="new">Create</target>
-        <jms:reference-file line="84">LigiBundle/Controller/ItemController.php</jms:reference-file>
+        <jms:reference-file line="81">LigiBundle/Controller/ItemController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="cbfba02feedbc94b0ae042ffa2e5300176843c59" resname="Create item">
         <source>Create item</source>
@@ -24,17 +24,27 @@
       <trans-unit id="f6fdbe48dc54dd86f63097a03bd24094dedd713a" resname="Delete">
         <source>Delete</source>
         <target state="new">Delete</target>
-        <jms:reference-file line="265">LigiBundle/Controller/ItemController.php</jms:reference-file>
+        <jms:reference-file line="262">LigiBundle/Controller/ItemController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
         <source>Description</source>
         <target state="new">Description</target>
         <jms:reference-file line="20">LigiBundle/Form/ItemType.php</jms:reference-file>
       </trans-unit>
+      <trans-unit id="7796463ce87e4980bfb88c4d83a0ff0e080714be" resname="Do you have a smartphone, some clothes or something else to give way? Please, have a look whether someone has already asked for it. If not, post your offer here.">
+        <source>Do you have a smartphone, some clothes or something else to give way? Please, have a look whether someone has already asked for it. If not, post your offer here.</source>
+        <target state="new">Do you have a smartphone, some clothes or something else to give way? Please, have a look whether someone has already asked for it. If not, post your offer here.</target>
+        <jms:reference-file line="12">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d79ad4268f3e7d5f2f8ecf5fb90f39f6f8b19e62" resname="Do you need clothes, a mobile or something else? Have a look it someone is already offering it. If not, post your needs here.">
+        <source>Do you need clothes, a mobile or something else? Have a look it someone is already offering it. If not, post your needs here.</source>
+        <target state="new">Do you need clothes, a mobile or something else? Have a look it someone is already offering it. If not, post your needs here.</target>
+        <jms:reference-file line="18">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="5301648dcf6b53cefc9ed52999aaa92d4603cae0" resname="Edit">
         <source>Edit</source>
         <target state="new">Edit</target>
-        <jms:reference-file line="21">views/Item/show.html.twig</jms:reference-file>
+        <jms:reference-file line="22">views/Item/show.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="9e431bc75815a95ebebcaeeab591c8158556771a" resname="Enter your search term and press return…">
         <source>Enter your search term and press return…</source>
@@ -46,22 +56,17 @@
         <target state="new">Home</target>
         <jms:reference-file line="22">Resources/views/layout.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit id="3b1b40b7143b76d01f20983672a18d14495736ae" resname="I want to give something.">
-        <source>I want to give something.</source>
-        <target state="new">I want to give something.</target>
+      <trans-unit id="6613cec181c2cab18b54704d3c33bb478745c5a8" resname="I would like to give something.">
+        <source>I would like to give something.</source>
+        <target state="new">I would like to give something.</target>
         <jms:reference-file line="11">views/Default/index.html.twig</jms:reference-file>
         <jms:reference-file line="7">views/Search/index.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit id="071941003f46e0ccd759b068504330775d289b6a" resname="I'm looking for something">
-        <source>I'm looking for something</source>
-        <target state="new">I'm looking for something</target>
+      <trans-unit id="07e1ace4ff62b91204e065c5479783ed330753ee" resname="I'm looking for something.">
+        <source>I'm looking for something.</source>
+        <target state="new">I'm looking for something.</target>
         <jms:reference-file line="17">views/Default/index.html.twig</jms:reference-file>
         <jms:reference-file line="8">views/Search/index.html.twig</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="09e871c98fef3b901a775def173e4126aaf73b42" resname="Images">
-        <source>Images</source>
-        <target state="new">Images</target>
-        <jms:reference-file line="33">LigiBundle/Form/ItemType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="50ecc1598cc6abae6d68e85166161e93093b7d4b" resname="Item list">
         <source>Item list</source>
@@ -69,9 +74,9 @@
         <jms:reference-file line="3">views/Item/index.html.twig</jms:reference-file>
         <jms:reference-file line="6">views/Item/index.html.twig</jms:reference-file>
       </trans-unit>
-      <trans-unit id="17863f007ffc862134364a2e636146e68098a47e" resname="Ligi is the esperanto word for connection and so this application aims to connect people who want to give away stuff for free and without conditions to people in need.">
-        <source>Ligi is the esperanto word for connection and so this application aims to connect people who want to give away stuff for free and without conditions to people in need.</source>
-        <target state="new">Ligi is the esperanto word for connection and so this application aims to connect people who want to give away stuff for free and without conditions to people in need.</target>
+      <trans-unit id="e57dc7f04bd98f530d428b0812877394ab94ac83" resname="Ligi means &quot;connection&quot; in esperanto. Thus, in reference to that, this application aims to connect people who want to give away stuff to people in need — for free and without any conditions.">
+        <source>Ligi means "connection" in esperanto. Thus, in reference to that, this application aims to connect people who want to give away stuff to people in need — for free and without any conditions.</source>
+        <target state="new">Ligi means "connection" in esperanto. Thus, in reference to that, this application aims to connect people who want to give away stuff to people in need — for free and without any conditions.</target>
         <jms:reference-file line="6">views/Default/index.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="709a23220f2c3d64d1e1d6d18c4d5280f8d82fca" resname="Name">
@@ -85,16 +90,26 @@
         <jms:reference-file line="52">views/Search/index.html.twig</jms:reference-file>
         <jms:reference-file line="54">views/Search/index.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="9a9ea6af3b1b046729f7d0395ed3a750cff269ce" resname="Please select an image for your profile picture.">
+        <source>Please select an image for your profile picture.</source>
+        <target state="new">Please select an image for your profile picture.</target>
+        <jms:reference-file line="17">LigiBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
       <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
         <source>Search</source>
         <target state="new">Search</target>
         <jms:reference-file line="3">views/Search/index.html.twig</jms:reference-file>
         <jms:reference-file line="12">views/Search/index.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="68f333ed0a37610ddaa0560bd3ff9e363d6539fc" resname="Start conversation with %creator%.">
+        <source>Start conversation with %creator%.</source>
+        <target state="new">Start conversation with %creator%.</target>
+        <jms:reference-file line="28">views/Item/show.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="fb91e24fa52d8d2b32937bf04d843f730319a902" resname="Update">
         <source>Update</source>
         <target state="new">Update</target>
-        <jms:reference-file line="188">LigiBundle/Controller/ItemController.php</jms:reference-file>
+        <jms:reference-file line="185">LigiBundle/Controller/ItemController.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="ca4f9dcf204e2037bfe5884867bead98bd9cbaf8" resname="Welcome">
         <source>Welcome</source>
@@ -105,16 +120,6 @@
         <source>Welcome to Ligi</source>
         <target state="new">Welcome to Ligi</target>
         <jms:reference-file line="4">views/Default/index.html.twig</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="9a0b68f3aa4fcc72ca3fa39f3f68a84e77261865" resname="You are in dire need of some clothing, a phone or something else? Have a look if someone is offering it and if not, add a new request.">
-        <source>You are in dire need of some clothing, a phone or something else? Have a look if someone is offering it and if not, add a new request.</source>
-        <target state="new">You are in dire need of some clothing, a phone or something else? Have a look if someone is offering it and if not, add a new request.</target>
-        <jms:reference-file line="18">views/Default/index.html.twig</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="a508e57a6af78855fc490e93adff51cabc8dc8c5" resname="You have a smartphone, some clothing you want to give away? Have a look if someone is in need and if not, post it.">
-        <source>You have a smartphone, some clothing you want to give away? Have a look if someone is in need and if not, post it.</source>
-        <target state="new">You have a smartphone, some clothing you want to give away? Have a look if someone is in need and if not, post it.</target>
-        <jms:reference-file line="12">views/Default/index.html.twig</jms:reference-file>
       </trans-unit>
     </body>
   </file>
