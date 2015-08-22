@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="fos_user")
  * @ORM\Entity
  */
-class User extends BaseUser implements ParticipantInterface,UserInterface
+class User extends BaseUser implements ParticipantInterface, UserInterface
 {
     /**
      * @var integer
