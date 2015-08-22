@@ -1,5 +1,5 @@
 <?php
-namespace Datenknoten\LigiBundle\Form;
+namespace Datenknoten\LigiBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
@@ -8,14 +8,15 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Datenknoten\LigiBundle\Form\DataTransformer\ImageUploadTransformer;
 use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 class ImageType extends AbstractType
 {
-    private $entityManager;
+    private $managerRegistry;
 
-    public function __construct(EntityManager $entityManager)
+    public function __construct(ManagerRegistry $managerRegistry)
     {
-        $this->entityManager = $entityManager;
+        $this->managerRegistry = $managerRegistry;
     }
 
     /**
@@ -23,7 +24,7 @@ class ImageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $transformer = new ImageUploadTransformer($this->entityManager);
+        $transformer = new ImageUploadTransformer($this->managerRegistry);
         $builder->addModelTransformer($transformer);
     }
 

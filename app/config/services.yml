@@ -18,7 +18,7 @@ services:
     tags:
       - { name: form.type, alias: ligi_user_profile }
   ligi.form.image:
-    class: Datenknoten\LigiBundle\Form\ImageType
-    arguments: ["@doctrine.orm.entity_manager"]
+    class: Datenknoten\LigiBundle\Form\Type\ImageType
+    arguments: ["@doctrine"]
     tags:
       - { name: form.type, alias: ligi_image }
