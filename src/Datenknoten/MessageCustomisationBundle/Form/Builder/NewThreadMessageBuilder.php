@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use FOS\MessageBundle\MessageBuilder\AbstractMessageBuilder;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use FOS\MessageBundle\Model\ThreadInterface;
+use Datenknoten\LigiBundle\Entity\Item;
 
 /**
  * Fluent interface message builder for new thread messages
