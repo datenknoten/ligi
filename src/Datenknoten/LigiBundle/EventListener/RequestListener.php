@@ -17,13 +17,13 @@ class RequestListener
         $request = $event->getRequest();
         $browser_locale = $request->getPreferredLanguage();
 
-        $session_locale = $request->getSession()->get('_locale',null);
+        $session_locale = $request->getSession()->get('_locale', null);
         if ($session_locale) {
             $request->setLocale($session_locale);
         } else {
             $request->getSession()->set('_locale', $browser_locale);
             $request->setLocale($browser_locale);
         }
-        \Locale::setDefault($request->getSession()->get('_locale',null));
+        \Locale::setDefault($request->getSession()->get('_locale', null));
     }
 }

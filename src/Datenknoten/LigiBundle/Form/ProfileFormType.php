@@ -8,7 +8,7 @@ class ProfileFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('languages','language',[
+        $builder->add('languages', 'language', [
             'placeholder' => 'Choose at least one language',
             'multiple' => true,
         ]);

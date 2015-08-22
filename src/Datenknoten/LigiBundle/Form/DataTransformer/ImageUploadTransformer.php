@@ -30,12 +30,12 @@ class ImageUploadTransformer implements DataTransformerInterface
     public function reverseTransform($value) {
         $items = json_decode($value);
         $retval = [];
-        foreach($items as $item) {
+        foreach ($items as $item) {
             if (!$item->deleted) {
                 $entityManager = $this->managerRegistry->getManagerForClass("LigiBundle:File");
                 $file = $entityManager
-                      ->getRepository('LigiBundle:File')
-                      ->find($item->id);
+                        ->getRepository('LigiBundle:File')
+                        ->find($item->id);
                 if ($file instanceof File) {
                     $retval[] = $file;
                 }

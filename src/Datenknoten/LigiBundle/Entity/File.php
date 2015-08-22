@@ -44,7 +44,7 @@ class File
 
     public function getDefaultPath()
     {
-        return realpath(__DIR__ . '/../../../../media');
+        return realpath(__DIR__.'/../../../../media');
     }
 
     public function getId()
