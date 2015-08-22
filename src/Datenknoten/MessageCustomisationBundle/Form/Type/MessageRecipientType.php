@@ -21,7 +21,7 @@ class MessageRecipientType extends AbstractTypep
     public function __construct(ManagerRegistry $managerRegistry, RequestStack $request_stack)
     {
         $this->managerRegistry = $managerRegistry;
-        $this->request = $request->getCurrentRequest();
+        $this->request = $request_stack->getCurrentRequest();
     }
 
     public function configureOptions(OptionsResolver $resolver)
