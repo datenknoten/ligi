@@ -2,6 +2,14 @@
 
 <table class="ui definition table">
   <tr>
+    <td>{% trans %}Profile picture{% endtrans %}</td>
+    <td>
+      {% if not user.avatar is null %}
+        <img class="ui tiny rounded image" src="{{ user.avatar.path|basename|imagine_filter('thumbnail') }}" />
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
     <td>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}</td>
     <td>{{ user.username }}</td>
   </tr>

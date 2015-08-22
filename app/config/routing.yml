@@ -1,3 +1,13 @@
+message_customisation:
+    resource: "@MessageCustomisationBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+user_customisation:
+    resource: "@UserCustomisationBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ligi:
     resource: "@LigiBundle/Controller/"
     type:     annotation
@@ -26,3 +36,6 @@ _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /messages

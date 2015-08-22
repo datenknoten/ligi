@@ -1,0 +1,47 @@
+{% extends 'FOSMessageBundle::layout.html.twig' %}
+
+{% block javascripts %}
+  {% javascripts
+  "@LigiBundle/Resources/public/moment/moment.js"
+  "@LigiBundle/Resources/public/js/threadviewer.js"%}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
+{% block fos_message_content %}
+  <h2 class="ui dividing header">{{ thread.subject }}</h2>
+
+  <div class="ui feed">
+    {% for message in thread.messages %}
+      <div class="event">
+        {% if not message.sender.avatar is null %}
+          <div class="label">
+            <img class="" src="{{ message.sender.avatar.path|basename|imagine_filter('thumbnail') }}">
+          </div>
+        {% endif %}
+        <div class="content">
+          <div class="summary">       
+            {% trans with {'%sender%':message.sender} %}
+              %sender% wrote a message
+            {% endtrans %}
+            <div class="date">
+              {{ message.createdAt|date('c') }}
+            </div>    
+          </div>
+          <div class="extra text">
+            {{ message.body }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h3 class="ui dividing header">{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
+
+  <form class="ui form" action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+    {{ form_widget(form) }}
+
+    <input class="ui blue button" type="submit" />
+  </form>
+
+{% endblock %}

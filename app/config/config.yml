@@ -43,7 +43,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "LigiBundle", "FOSUserBundle" ]
+    bundles:        [ "LigiBundle", "FOSUserBundle", "FOSMessageBundle" ]
     #java: /usr/bin/java
     assets:
       semantic-icons-woff2:
@@ -156,3 +156,13 @@ knp_paginator:
     template:
         pagination: LigiBundle:Pagination:template.html.twig
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig
+
+fos_message:
+    db_driver: orm
+    thread_class: Datenknoten\LigiBundle\Entity\Thread
+    message_class: Datenknoten\LigiBundle\Entity\Message
+    new_thread_form:
+      type: mc.message.new_thread
+      model: Datenknoten\MessageCustomisationBundle\Form\Model\NewThreadMessage
+      handler: mc.message.new_thread_handler
+      #builder: Datenknoten\LigiBundle\Form\Builder\NewThreadMessageBuilder

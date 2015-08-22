@@ -1,0 +1,15 @@
+{% extends 'LigiBundle::layout.html.twig' %}
+
+{% block title %}{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}{% endblock title %}
+
+{% block body -%}
+  <h1 class="ui dividing header">{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
+
+  <div class="ui menu">
+    <a class="item" href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a>
+    <a class="item" href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a>
+    <a class="item" href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a>
+  </div>
+
+  {% block fos_message_content %}{% endblock %}
+{% endblock %}

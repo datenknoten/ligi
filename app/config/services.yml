@@ -22,3 +22,39 @@ services:
     arguments: ["@doctrine"]
     tags:
       - { name: form.type, alias: ligi_image }
+  mc.form.message_item:
+    class: Datenknoten\MessageCustomisationBundle\Form\Type\MessageItemType
+    arguments:
+      - "@doctrine"
+      - "@request"
+    scope: request
+    tags:
+      - { name: form.type, alias: mc_message_item }
+  mc.form.message_recipient:
+    class: Datenknoten\MessageCustomisationBundle\Form\Type\MessageRecipientType
+    arguments:
+      - "@doctrine"
+      - "@request"
+    scope: request
+    tags:
+      - { name: form.type, alias: mc_message_recipient }
+  mc.message.new_thread:
+    class: Datenknoten\MessageCustomisationBundle\Form\NewThreadMessageFormType
+    tags:
+      - { name: form.type, alias: mc_message_new_thread }
+  mc.message.composer:
+    class: Datenknoten\MessageCustomisationBundle\Composer\Composer
+    arguments:
+      - "@fos_message.message_manager"
+      - "@fos_message.thread_manager"
+      - "@doctrine"
+  mc.message.new_thread_handler:
+    class: Datenknoten\MessageCustomisationBundle\Form\Handler\NewThreadMessageFormHandler
+    arguments:
+      - "@request"
+      - "@mc.message.composer"
+      - "@fos_message.sender"
+      - "@fos_message.participant_provider"
+    scope: request
+    tags:
+      - { name: form.handler, alias: mc_message_new_thread_handler }

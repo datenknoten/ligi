@@ -442,3 +442,13 @@
     </button>
   </div>
 {% endblock ligi_image_widget %}
+
+{% block mc_message_item_widget %}
+  <input disabled type="text" value="{{ entity.name|default("") }}" />
+  <input type="hidden" name="{{ full_name }}" value="{{ entity.id|default(0) }}" />
+{% endblock mc_message_item_widget %}
+
+{% block mc_message_recipient_widget %}
+  <input disabled type="text" value="{{ entity.username|default("") }}" />
+  <input type="hidden" name="{{ full_name }}" value="{{ entity.id|default(0) }}" />
+{% endblock mc_message_recipient_widget %}

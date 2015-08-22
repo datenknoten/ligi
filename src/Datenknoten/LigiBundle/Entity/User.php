@@ -3,6 +3,8 @@
 namespace Datenknoten\LigiBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
+use FOS\UserBundle\Model\UserInterface;
+use FOS\MessageBundle\Model\ParticipantInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -11,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="fos_user")
  * @ORM\Entity
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface,UserInterface
 {
     /**
      * @var integer
@@ -29,10 +31,33 @@ class User extends BaseUser
      */
     public $languages;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Datenknoten\LigiBundle\Entity\File")
+     * @var File
+     */
+    protected $avatar;
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($file)
+    {
+        $this->avatar = $file;
+
+        return $this;
     }
 
 }

@@ -23,6 +23,9 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+            new Datenknoten\UserCustomisationBundle\UserCustomisationBundle(),
+            new Datenknoten\MessageCustomisationBundle\MessageCustomisationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

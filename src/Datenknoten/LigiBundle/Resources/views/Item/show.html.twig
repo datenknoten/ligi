@@ -23,4 +23,10 @@
     </a>
   {% endif %}
 
+  {% if (is_granted('ROLE_USER') and (not (app.user is null)) and (app.user.username != entity.createdBy))  %}
+    <a class="ui blue button" href="{{ path('fos_message_thread_new',{'items_id' : entity.id, 'recipient' : entity.getCreatedBy() }) }}">
+      {% trans with { "%creator%" : entity.getCreatedBy() } %}Start conversation with %creator%.{% endtrans %}
+    </a>
+  {% endif %}
+
 {% endblock %}
