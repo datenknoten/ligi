@@ -53,7 +53,7 @@ class Thread extends BaseThread
 
     public function getItem()
     {
-        return $item;
+        return $this->item;
     }
 
     public function setItem($item)
