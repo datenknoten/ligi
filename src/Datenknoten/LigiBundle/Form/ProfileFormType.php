@@ -13,7 +13,7 @@ class ProfileFormType extends AbstractType
                 'placeholder' => 'Choose at least one language.',
                 'multiple' => true,
             ])
-            ->add('avatar', 'file',[
+            ->add('avatar', 'file', [
                 'label' => 'Please select an image for your profile picture.'
             ])
             ;
