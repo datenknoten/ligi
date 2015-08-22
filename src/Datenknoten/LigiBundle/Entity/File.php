@@ -64,7 +64,6 @@ class File
 
     public function getMimeType()
     {
-        return $this->mime_type;
+        return $this->mimeType;
     }
-
 }
