@@ -26,7 +26,6 @@ class SearchController extends Controller
         if (!is_null($_search)) {
             return $this->redirect($this->generateUrl('ligi_search', ['search_type' => $search_type,'search' => $_search]));
         }
-        $entities = [];
 
         $search_term = ($search == '' ? '%' : $search);
         if (strpos($search_term,'%') === false) {
