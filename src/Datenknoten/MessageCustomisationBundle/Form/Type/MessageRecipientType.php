@@ -2,13 +2,14 @@
 
 namespace Datenknoten\MessageCustomisationBundle\Form\Type;
 
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class MessageRecipientType extends AbstractTypep
+class MessageRecipientType extends AbstractType
 {
     private $managerRegistry;
     private $request;
