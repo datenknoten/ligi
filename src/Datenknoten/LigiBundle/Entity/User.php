@@ -27,7 +27,7 @@ class User extends BaseUser implements ParticipantInterface, UserInterface
     /**
      * @var array
      *
-     * @ORM\Column(name="languages", type="json_array",options={"default"=""})
+     * @ORM\Column(name="languages", type="json_array",options={"default"=""},nullable=true)
      */
     public $languages;
 
