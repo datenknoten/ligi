@@ -2,6 +2,10 @@
 
 Ligi is the esperanto word for link or connection. This application aims to connect people who want to give away stuff for free and without conditions.
 
+## Chat
+
+There is a chat on [webchat.datenknoten.me](https://webchat.datenknoten.me/) which can also accessed via XMPP: [server@conference.boese-ban.de](xmpp:server@conference.boese-ban.de)
+
 ## Install
 
 * Clone [this Repository](https://github.com/datenknoten/ligi) somewhere.
