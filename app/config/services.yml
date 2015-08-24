@@ -19,7 +19,10 @@ services:
       - { name: form.type, alias: ligi_user_profile }
   ligi.form.image:
     class: Datenknoten\LigiBundle\Form\Type\ImageType
-    arguments: ["@doctrine"]
+    arguments:
+      - "@doctrine"
+      - "@request"
+    scope: request
     tags:
       - { name: form.type, alias: ligi_image }
   mc.form.message_item:
